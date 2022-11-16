@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">News Application</string>
+    <string name="title_discover">Discover</string>
+    <string name="title_bookmark">Bookmark</string>
+    <string name="cd_image_article">Image Article</string>
+    <string name="dummy_article_title">12 of the Best Household Uses for Hair Conditioner</string>
+    <string name="dummy_article_author">Lindsey Ellefson</string>
+    <string name="dummy_article_date">Oct 19, 2022</string>
+    <string name="dot_symbol">•</string>
+    <string name="logo_name">News!</string>
+    <string name="application_logo">Application Logo</string>
+    <string name="button_arrow_back">Button Arrow Back</string>
+    <string name="cd_button_share">Button Share</string>
+    <string name="cd_button_bookmark">Button Bookmark</string>
+    <string name="dummy_article_content">Project Starline basically asks the question, \"What if Zoom was a giant, sit-down arcade machine?\" While the home console version of video chat just involves a tiny camera above your laptop screen, S… [+1873 chars] \"</string>
+    <string name="dummy_article_description">Hair conditioner isn’t a particularly complex thing. Its name says what it does: It conditions your hair. You use it in the shower to offset the drying effect of your shampoo and make your tresses more manageable. It’s simple stuff, right? It’s not that simpl…</string>
+    <string name="cd_author_image">Author Image</string>
+    <string name="cd_publish_date">Publish Date</string>
+    <string name="read_more">Read More</string>
+    <string name="cd_image_menu">Image Menu</string>
+    <string name="favorite_page_name">Halaman favorit</string>
+    <string name="hapus">Hapus</string>
+    <string name="dialog_title"><![CDATA[Hapus item ini dari &quotHalaman favorit&quot]]></string>
+    <string name="dialog_description">Item tersebut tidak akan tersedia lagi di koleksi ini</string>
+    <string name="cancel_text">Batal</string>
+    <string name="dialog_name">Hapus</string>
+    <string name="empty_favorite">Empty Favorite</string>
+    <string name="description_empty_favorite">Favorit kosong</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_profile">Profile</string>
+    <string name="cd_profile_image_background">Profile Image Background</string>
+
+    <string name="about_developer">Final year (semester 8) student with a degree in Electrical Engineering and a GPA of 3.46 looking for a position as an Android Developer. Have good kotlin programming skills, love communicating, and critical thinking with an understanding of building android apps with best practices such as using architecture like MVVM with Clean Architecture and using Android Jetpack like Koin, Retrofit, and Room. I\'m a good partner for android developers in the team and making android programming as a hobby</string>
+
+</resources>
