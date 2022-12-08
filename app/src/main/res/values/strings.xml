@@ -32,5 +32,6 @@
     <string name="cd_profile_image_background">Profile Image Background</string>
 
     <string name="about_developer">Final year (semester 8) student with a degree in Electrical Engineering and a GPA of 3.46 looking for a position as an Android Developer. Have good kotlin programming skills, love communicating, and critical thinking with an understanding of building android apps with best practices such as using architecture like MVVM with Clean Architecture and using Android Jetpack like Koin, Retrofit, and Room. I\'m a good partner for android developers in the team and making android programming as a hobby</string>
+    <string name="dummy_article_date_utc">2022–11–02T06:55:18Z</string>
 
 </resources>
