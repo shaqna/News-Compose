@@ -1,4 +1,4 @@
-package com.ngedev.newsapplicationcompose.ui.detail.components
+package com.ngedev.newsapplicationcompose.ui.components
 
 import android.content.Context
 import android.content.Intent
@@ -6,7 +6,10 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Divider
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -19,21 +22,25 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import coil.compose.AsyncImage
 import com.ngedev.newsapplicationcompose.R
 import com.ngedev.newsapplicationcompose.domain.model.Article
-import com.ngedev.newsapplicationcompose.domain.model.Source
 import com.ngedev.newsapplicationcompose.ui.web.WebActivity
 
 @Composable
 fun DetailContent(
-    article: Article,
     modifier: Modifier = Modifier,
+    innerPadding: PaddingValues,
+    article: Article?,
     context: Context = LocalContext.current,
 ) {
+    val paddingValues = PaddingValues(
+        start = innerPadding.calculateStartPadding(LayoutDirection.Rtl),
+        end = innerPadding.calculateEndPadding(LayoutDirection.Ltr)
+    )
 
     Column(
         modifier = modifier
@@ -42,7 +49,7 @@ fun DetailContent(
             .padding(16.dp)
     ) {
         Text(
-            text = article.title ?: "",
+            text = article?.title ?: "",
             fontSize = 24.sp,
             color = Color.Black,
             fontFamily = FontFamily.SansSerif,
@@ -54,13 +61,14 @@ fun DetailContent(
                 .height(212.dp)
                 .fillMaxWidth()
                 .padding(top = 16.dp),
-            model = article.urlToImage,
+            model = article?.urlToImage,
             contentDescription = stringResource(id = R.string.cd_image_article),
-            contentScale = ContentScale.FillWidth
-        )
+            contentScale = ContentScale.FillWidth,
+
+            )
 
         Text(
-            text = article.description ?: "",
+            text = article?.description ?: "",
             modifier = modifier
                 .fillMaxWidth()
                 .padding(top = 16.dp),
@@ -82,7 +90,7 @@ fun DetailContent(
             )
             Spacer(modifier = modifier.width(4.dp))
             Text(
-                text = article.author ?: "",
+                text = article?.author ?: "",
                 fontSize = 14.sp,
                 color = Color.Gray,
                 modifier = modifier
@@ -105,7 +113,7 @@ fun DetailContent(
             )
             Spacer(modifier = modifier.width(4.dp))
             Text(
-                text = article.publishedAt ?: "",
+                text = article?.publishedAt ?: "",
                 fontSize = 14.sp,
                 color = Color.Gray,
                 modifier = modifier
@@ -121,7 +129,7 @@ fun DetailContent(
         )
 
         Text(
-            text = article.content ?: "",
+            text = article?.content ?: "",
             modifier = modifier
                 .fillMaxWidth()
                 .padding(top = 16.dp),
@@ -133,7 +141,7 @@ fun DetailContent(
         Button(
             onClick = {
                 Intent(context, WebActivity::class.java).also {
-                    it.putExtra(WebActivity.TAG, article.url)
+                    it.putExtra(WebActivity.TAG, article?.url)
                     context.startActivity(it)
                 }
             },
@@ -143,25 +151,4 @@ fun DetailContent(
             Text(text = stringResource(id = R.string.read_more), color = Color.White)
         }
     }
-}
-
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun DetailContentPreview() {
-
-    MaterialTheme {
-        DetailContent(
-            article = Article(
-                source = Source(),
-                urlToImage = "",
-                author = stringResource(id = R.string.dummy_article_author),
-                content = stringResource(id = R.string.dummy_article_content),
-                description = stringResource(id = R.string.dummy_article_description),
-                publishedAt = stringResource(id = R.string.dummy_article_date),
-                title = stringResource(id = R.string.dummy_article_title)
-            ),
-        )
-    }
-
-
 }

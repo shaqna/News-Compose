@@ -1,4 +1,4 @@
-package com.ngedev.newsapplicationcompose.ui.favorite
+package com.ngedev.newsapplicationcompose.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,6 +14,10 @@ class FavoriteViewModel(private val useCase: ArticleUseCase) : ViewModel() {
 
     private val _favorites = MutableStateFlow<List<FavoriteEntity>>(emptyList())
     val favorites: StateFlow<List<FavoriteEntity>> = _favorites
+
+    init {
+        getAllFavorites()
+    }
 
     fun getAllFavorites() {
         viewModelScope.launch {

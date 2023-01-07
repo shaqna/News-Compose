@@ -9,7 +9,7 @@ import com.ngedev.newsapplicationcompose.data.source.remote.response.Response
 import com.ngedev.newsapplicationcompose.domain.model.Article
 import com.ngedev.newsapplicationcompose.domain.model.RemoteKeys
 import com.ngedev.newsapplicationcompose.domain.repository.IArticleRepository
-import com.ngedev.newsapplicationcompose.ui.detail.BookmarkState
+import com.ngedev.newsapplicationcompose.ui.viewmodel.BookmarkState
 import com.ngedev.newsapplicationcompose.utils.TimestampConverter.formatTo
 import com.ngedev.newsapplicationcompose.utils.TimestampConverter.toDate
 import kotlinx.coroutines.CoroutineDispatcher

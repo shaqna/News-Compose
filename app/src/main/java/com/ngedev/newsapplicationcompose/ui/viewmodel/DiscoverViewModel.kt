@@ -1,4 +1,4 @@
-package com.ngedev.newsapplicationcompose.ui.discover
+package com.ngedev.newsapplicationcompose.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -14,10 +14,12 @@ import org.koin.dsl.module
 
 class DiscoverViewModel(private val useCase: ArticleUseCase) : ViewModel() {
 
-
-
     private val _pagingArticles = MutableStateFlow<PagingData<Article>>(PagingData.empty())
     val listArticle: StateFlow<PagingData<Article>> = _pagingArticles
+
+    init {
+        getArticleRelateWith("google")
+    }
 
     fun getArticleRelateWith(query:  String) {
         viewModelScope.launch {
@@ -33,3 +35,4 @@ class DiscoverViewModel(private val useCase: ArticleUseCase) : ViewModel() {
         }
     }
 }
+

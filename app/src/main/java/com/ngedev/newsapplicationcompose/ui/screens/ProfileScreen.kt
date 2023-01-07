@@ -1,4 +1,4 @@
-package com.ngedev.newsapplicationcompose.ui.profile.components
+package com.ngedev.newsapplicationcompose.ui.screens
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
@@ -23,7 +23,7 @@ import androidx.constraintlayout.compose.Dimension
 import com.ngedev.newsapplicationcompose.R
 
 @Composable
-fun Profile(
+fun ProfileScreen(
     modifier: Modifier = Modifier
 ) {
     ConstraintLayout(
@@ -121,6 +121,6 @@ fun Profile(
 @Composable
 fun ProfilePreview() {
     MaterialTheme {
-        Profile()
+        ProfileScreen()
     }
 }

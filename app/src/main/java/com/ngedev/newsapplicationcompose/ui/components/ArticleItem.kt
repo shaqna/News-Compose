@@ -1,7 +1,9 @@
-package com.ngedev.newsapplicationcompose.ui.discover.components
+package com.ngedev.newsapplicationcompose.ui.components
 
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.requiredHeight
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Card
 import androidx.compose.material.Divider

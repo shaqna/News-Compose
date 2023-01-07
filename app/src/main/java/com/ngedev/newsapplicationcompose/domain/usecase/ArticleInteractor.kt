@@ -4,7 +4,7 @@ import androidx.paging.PagingData
 import com.ngedev.newsapplicationcompose.data.source.local.entity.FavoriteEntity
 import com.ngedev.newsapplicationcompose.domain.model.Article
 import com.ngedev.newsapplicationcompose.domain.repository.IArticleRepository
-import com.ngedev.newsapplicationcompose.ui.detail.BookmarkState
+import com.ngedev.newsapplicationcompose.ui.viewmodel.BookmarkState
 import kotlinx.coroutines.flow.Flow
 import org.koin.core.module.dsl.bind
 

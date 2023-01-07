@@ -1,4 +1,4 @@
-package com.ngedev.newsapplicationcompose.ui.detail
+package com.ngedev.newsapplicationcompose.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

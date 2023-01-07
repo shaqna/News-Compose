@@ -6,9 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import androidx.core.os.BuildCompat
 import com.ngedev.newsapplicationcompose.MainActivity
 import com.ngedev.newsapplicationcompose.R
 
+@BuildCompat.PrereleaseSdkCheck
 @SuppressLint("CustomSplashScreen")
 class SplashActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
