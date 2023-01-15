@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.page.DetailActivity">
+
+
+    <ImageButton
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/button_arrow_back"
+        android:minHeight="48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+        tools:ignore="RedundantDescriptionCheck" />
+
+
+    <ImageButton
+        android:id="@+id/buttonBookmark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/cd_button_bookmark"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_bookmark_border_24"
+        tools:ignore="RedundantDescriptionCheck" />
+
+    <ImageButton
+        android:id="@+id/buttonShare"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="@android:color/transparent"
+        android:contentDescription="@string/cd_button_share"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toStartOf="@+id/buttonBookmark"
+        app:layout_constraintTop_toTopOf="@+id/buttonBookmark"
+        app:srcCompat="@drawable/ic_baseline_share_24"
+        tools:ignore="RedundantDescriptionCheck" />
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/detailArticle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonBack"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
