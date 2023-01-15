@@ -9,4 +9,6 @@ sealed class Screen(val route: String) {
     object Bookmark: Screen("favorite_screen")
     object Profile: Screen("profile_screen")
     object Detail: Screen("detail_screen")
+
+    object Web: Screen("web_screen")
 }

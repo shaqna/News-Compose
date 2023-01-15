@@ -6,6 +6,7 @@ import com.ngedev.newsapplicationcompose.domain.di.DomainInjection
 import com.ngedev.newsapplicationcompose.ui.viewmodel.DetailViewModel
 import com.ngedev.newsapplicationcompose.ui.viewmodel.DiscoverViewModel
 import com.ngedev.newsapplicationcompose.ui.viewmodel.FavoriteViewModel
+import com.ngedev.newsapplicationcompose.ui.viewmodel.SplashViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.loadKoinModules
@@ -23,7 +24,8 @@ class NewsApplication : Application() {
                     DomainInjection.injects(),
                     DiscoverViewModel.inject(),
                     FavoriteViewModel.inject(),
-                    DetailViewModel.inject()
+                    DetailViewModel.inject(),
+                    SplashViewModel.inject()
                 )
             )
         }

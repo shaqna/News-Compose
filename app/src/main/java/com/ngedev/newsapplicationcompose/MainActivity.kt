@@ -20,15 +20,27 @@ import androidx.navigation.compose.rememberNavController
 import com.ngedev.newsapplicationcompose.ui.navigation.BottomNavigationItem
 import com.ngedev.newsapplicationcompose.ui.navigation.NavGraph
 import com.ngedev.newsapplicationcompose.ui.navigation.Screen
-
+import com.ngedev.newsapplicationcompose.ui.viewmodel.SplashViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 
 @BuildCompat.PrereleaseSdkCheck
 class MainActivity : ComponentActivity() {
+
+    private val viewModel: SplashViewModel by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
+
+        installSplashScreen().setKeepOnScreenCondition {
+            !viewModel.isLoading.value
+        }
+
         setContent {
             MaterialTheme {
-                MainPage()
+                val startDestination by viewModel.startDestination
+                MainPage(startDestination = startDestination)
             }
         }
     }
@@ -39,6 +51,7 @@ class MainActivity : ComponentActivity() {
 fun MainPage(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
+    startDestination: String
 ) {
     Scaffold(
         bottomBar = {
@@ -46,7 +59,11 @@ fun MainPage(
         },
         modifier = modifier
     ) { innerPadding ->
-        NavGraph(navController = navController, innerPadding = innerPadding)
+        NavGraph(
+            navController = navController,
+            innerPadding = innerPadding,
+            startDestination = startDestination
+        )
     }
 }
 

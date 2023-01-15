@@ -1,7 +1,6 @@
 package com.ngedev.newsapplicationcompose.ui.components
 
 import android.content.Context
-import android.content.Intent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.rememberScrollState
@@ -25,13 +24,15 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.ngedev.newsapplicationcompose.R
 import com.ngedev.newsapplicationcompose.domain.model.Article
-import com.ngedev.newsapplicationcompose.ui.web.WebActivity
+import com.ngedev.newsapplicationcompose.ui.navigation.Screen
 
 @Composable
 fun DetailContent(
+    navController: NavController,
     modifier: Modifier = Modifier,
     innerPadding: PaddingValues,
     article: Article?,
@@ -140,10 +141,12 @@ fun DetailContent(
 
         Button(
             onClick = {
-                Intent(context, WebActivity::class.java).also {
-                    it.putExtra(WebActivity.TAG, article?.url)
-                    context.startActivity(it)
-                }
+
+                navController.currentBackStackEntry?.savedStateHandle?.set(
+                    key = "url",
+                    value = article?.url
+                )
+                navController.navigate(Screen.Web.route)
             },
             modifier = modifier.fillMaxHeight(),
             colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFF0B698B))

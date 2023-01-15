@@ -1,6 +1,5 @@
 package com.ngedev.newsapplicationcompose.ui.components
 
-import android.content.Intent
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,13 +13,14 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.unit.dp
-import androidx.core.content.ContextCompat.startActivity
+import androidx.navigation.NavController
+import com.ngedev.newsapplicationcompose.ui.navigation.Screen
 import com.ngedev.newsapplicationcompose.ui.viewmodel.FavoriteViewModel
-import com.ngedev.newsapplicationcompose.ui.web.WebActivity
 import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun ListBookmark(
+    navController: NavController,
     modifier: Modifier = Modifier,
     viewModel: FavoriteViewModel = koinViewModel()
 ) {
@@ -49,12 +49,12 @@ fun ListBookmark(
                 BookmarkItem(item = item, onDeleteItem = {
                     viewModel.deleteArticleFavorite(item.copy(isFavorite = false))
                 }, onClickItem = {
-                    Intent(context, WebActivity::class.java).also { intent ->
-                        item.url.let {
-                            intent.putExtra(WebActivity.TAG, it)
-                        }
-                        startActivity(context, intent, null)
-                    }
+
+                    navController.currentBackStackEntry?.savedStateHandle?.set(
+                        key = "url",
+                        value = item.url
+                    )
+                    navController.navigate(Screen.Web.route)
                 })
             }
 

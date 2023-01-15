@@ -10,12 +10,15 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.ngedev.newsapplicationcompose.R
 import com.ngedev.newsapplicationcompose.ui.components.ListBookmark
 
 
 @Composable
 fun BookmarkScreen(
+    navController: NavController,
     modifier: Modifier = Modifier,
 ) {
     Column(
@@ -25,7 +28,7 @@ fun BookmarkScreen(
     ) {
         Text(text = stringResource(id = R.string.favorite_page_name), fontSize = 20.sp,)
         Spacer(modifier = modifier.height(24.dp))
-        ListBookmark()
+        ListBookmark(navController = navController)
     }
 }
 
@@ -33,6 +36,6 @@ fun BookmarkScreen(
 @Composable
 fun BookmarkScreenPreview() {
     MaterialTheme {
-        BookmarkScreen()
+        BookmarkScreen(navController = rememberNavController())
     }
 }

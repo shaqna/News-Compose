@@ -14,12 +14,7 @@ import androidx.navigation.navigation
 import com.google.gson.Gson
 import com.ngedev.newsapplicationcompose.domain.model.Article
 import com.ngedev.newsapplicationcompose.domain.model.ArticleArgType
-import com.ngedev.newsapplicationcompose.ui.screens.BookmarkScreen
-import com.ngedev.newsapplicationcompose.ui.screens.DetailScreen
-import com.ngedev.newsapplicationcompose.ui.screens.DiscoverScreen
-import com.ngedev.newsapplicationcompose.ui.screens.ProfileScreen
-
-
+import com.ngedev.newsapplicationcompose.ui.screens.*
 
 
 @BuildCompat.PrereleaseSdkCheck
@@ -27,11 +22,12 @@ import com.ngedev.newsapplicationcompose.ui.screens.ProfileScreen
 fun NavGraph(
     modifier: Modifier = Modifier,
     navController: NavHostController,
-    innerPadding: PaddingValues
+    innerPadding: PaddingValues,
+    startDestination: String
 ) {
     NavHost(
         navController = navController,
-        startDestination = Screen.Discover.route,
+        startDestination = startDestination,
         modifier = modifier.padding(innerPadding)
     ) {
         composable(Screen.Discover.route) {
@@ -39,13 +35,14 @@ fun NavGraph(
         }
 
         composable(Screen.Bookmark.route) {
-            BookmarkScreen()
+            BookmarkScreen(navController = navController)
         }
 
         composable(Screen.Profile.route) {
             ProfileScreen()
         }
         detailNavGraph(navController = navController)
+        webNavGraph(navController = navController)
     }
 }
 
@@ -60,9 +57,23 @@ fun NavGraphBuilder.detailNavGraph(navController: NavHostController) {
             )
             DetailScreen(article = result, navController = navController)
         }
+
+    }
+}
+
+fun NavGraphBuilder.webNavGraph(navController: NavHostController) {
+    navigation(
+        route = Graph.WEB,
+        startDestination = Screen.Web.route
+    ) {
+        composable(Screen.Web.route) {
+            val result = navController.previousBackStackEntry?.savedStateHandle?.get<String>("url")
+            WebScreen(url = result)
+        }
     }
 }
 
 object Graph {
     const val DETAILS = "details_graph"
+    const val WEB = "web_graph"
 }

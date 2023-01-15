@@ -80,7 +80,7 @@ fun DetailScreen(
                 },
                 onFavoriteClick = {
                     favoriteStatus = !favoriteStatus
-                    if(favoriteStatus) {
+                    if (favoriteStatus) {
                         val favoriteArticle = article?.toFavoriteEntity(true)
                         viewModel.addArticleFavorite(favoriteArticle!!)
                     } else {
@@ -92,7 +92,11 @@ fun DetailScreen(
             )
         },
         content = { innerPadding ->
-            DetailContent(innerPadding = innerPadding, article = article)
+            DetailContent(
+                innerPadding = innerPadding,
+                article = article,
+                navController = navController
+            )
         }
     )
 
@@ -116,7 +120,7 @@ fun AppBar(
             }
         }, actions = {
             IconButton(onClick = {
-               onFavoriteClick()
+                onFavoriteClick()
             }) {
                 if (isFavorite) {
                     Icon(
@@ -138,10 +142,9 @@ fun AppBar(
 }
 
 
-
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun DetailContentPreview() {
+fun DetailScreenPreview() {
 
     MaterialTheme {
         DetailScreen(
