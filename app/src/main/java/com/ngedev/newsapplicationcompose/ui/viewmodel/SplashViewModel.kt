@@ -10,6 +10,7 @@ import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
 
+// create splash screen viewmodel
 class SplashViewModel : ViewModel() {
 
     private val _isLoading: MutableState<Boolean> = mutableStateOf(true)

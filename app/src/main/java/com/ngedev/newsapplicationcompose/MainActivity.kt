@@ -47,6 +47,7 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+//
 @BuildCompat.PrereleaseSdkCheck
 @Composable
 fun MainPage(
@@ -68,6 +69,7 @@ fun MainPage(
     }
 }
 
+//
 @Composable
 fun BottomBar(
     modifier: Modifier = Modifier,
