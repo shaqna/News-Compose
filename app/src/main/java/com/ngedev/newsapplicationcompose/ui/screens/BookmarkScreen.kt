@@ -16,6 +16,7 @@ import com.ngedev.newsapplicationcompose.R
 import com.ngedev.newsapplicationcompose.ui.components.ListBookmark
 
 
+// create bookmark screen
 @Composable
 fun BookmarkScreen(
     navController: NavController,

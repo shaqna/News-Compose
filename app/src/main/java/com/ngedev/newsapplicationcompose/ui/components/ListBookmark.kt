@@ -18,6 +18,7 @@ import com.ngedev.newsapplicationcompose.ui.navigation.Screen
 import com.ngedev.newsapplicationcompose.ui.viewmodel.FavoriteViewModel
 import org.koin.androidx.compose.koinViewModel
 
+// create list bookmark view
 @Composable
 fun ListBookmark(
     navController: NavController,

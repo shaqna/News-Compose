@@ -14,6 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ngedev.newsapplicationcompose.R
 
+// create empty list view component
 @Composable
 fun EmptyList(
     modifier: Modifier = Modifier

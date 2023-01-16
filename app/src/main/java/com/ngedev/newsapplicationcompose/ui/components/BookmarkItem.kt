@@ -23,6 +23,7 @@ import com.ngedev.newsapplicationcompose.R
 import com.ngedev.newsapplicationcompose.data.source.local.entity.FavoriteEntity
 import com.ngedev.newsapplicationcompose.ui.menu.BookmarkMenu
 
+// create bookmark item view
 @Composable
 fun BookmarkItem(
     item: FavoriteEntity,
