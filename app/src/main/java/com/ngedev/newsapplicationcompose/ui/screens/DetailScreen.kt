@@ -27,6 +27,7 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import org.koin.androidx.compose.koinViewModel
 
+// create detail screen
 @Composable
 fun DetailScreen(
     article: Article?,

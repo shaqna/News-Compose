@@ -41,11 +41,13 @@ fun NavGraph(
         composable(Screen.Profile.route) {
             ProfileScreen()
         }
+        //add detail nav graph in nav host
         detailNavGraph(navController = navController)
         webNavGraph(navController = navController)
     }
 }
 
+// create detail nav graph
 fun NavGraphBuilder.detailNavGraph(navController: NavHostController) {
     navigation(
         route = Graph.DETAILS,

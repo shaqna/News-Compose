@@ -30,6 +30,7 @@ import com.ngedev.newsapplicationcompose.R
 import com.ngedev.newsapplicationcompose.domain.model.Article
 import com.ngedev.newsapplicationcompose.ui.navigation.Screen
 
+// create detail content view
 @Composable
 fun DetailContent(
     navController: NavController,
