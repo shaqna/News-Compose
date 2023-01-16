@@ -20,6 +20,7 @@ import com.ngedev.newsapplicationcompose.ui.navigation.Screen
 import com.ngedev.newsapplicationcompose.ui.viewmodel.DiscoverViewModel
 import org.koin.androidx.compose.koinViewModel
 
+// create ListArticle view
 @BuildCompat.PrereleaseSdkCheck
 @Composable
 fun ListArticle(

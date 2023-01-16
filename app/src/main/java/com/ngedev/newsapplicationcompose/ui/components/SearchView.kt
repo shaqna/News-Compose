@@ -19,6 +19,7 @@ import androidx.compose.ui.unit.dp
 import com.ngedev.newsapplicationcompose.ui.viewmodel.DiscoverViewModel
 import org.koin.androidx.compose.koinViewModel
 
+// create search view component
 @Composable
 fun SearchView(
     modifier: Modifier = Modifier,

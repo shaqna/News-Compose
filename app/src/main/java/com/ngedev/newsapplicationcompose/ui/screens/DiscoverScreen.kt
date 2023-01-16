@@ -21,6 +21,7 @@ import com.ngedev.newsapplicationcompose.R
 import com.ngedev.newsapplicationcompose.ui.components.SearchView
 import com.ngedev.newsapplicationcompose.ui.components.ListArticle
 
+// create discover screen
 @BuildCompat.PrereleaseSdkCheck
 @Composable
 fun DiscoverScreen(

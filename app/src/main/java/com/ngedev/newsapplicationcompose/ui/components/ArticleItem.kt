@@ -25,6 +25,7 @@ import androidx.constraintlayout.compose.Dimension
 import coil.compose.AsyncImage
 import com.ngedev.newsapplicationcompose.R
 
+// create ArticleItem view
 @Composable
 fun ArticleItem(
     urlToImage: String,
