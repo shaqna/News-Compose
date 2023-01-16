@@ -33,6 +33,7 @@ class MainActivity : ComponentActivity() {
 
         super.onCreate(savedInstanceState)
 
+        // load splash screen when app running
         installSplashScreen().setKeepOnScreenCondition {
             !viewModel.isLoading.value
         }
