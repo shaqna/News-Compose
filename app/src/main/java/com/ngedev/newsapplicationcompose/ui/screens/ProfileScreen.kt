@@ -22,6 +22,7 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.constraintlayout.compose.Dimension
 import com.ngedev.newsapplicationcompose.R
 
+// create profile screen
 @Composable
 fun ProfileScreen(
     modifier: Modifier = Modifier
