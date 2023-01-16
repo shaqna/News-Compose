@@ -7,6 +7,7 @@ import android.webkit.WebViewClient
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.viewinterop.AndroidView
 
+// create web screen
 @SuppressLint("SetJavaScriptEnabled")
 @Composable
 fun WebScreen(url: String?) {

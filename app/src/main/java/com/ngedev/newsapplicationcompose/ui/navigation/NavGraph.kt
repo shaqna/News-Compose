@@ -43,6 +43,7 @@ fun NavGraph(
         }
         //add detail nav graph in nav host
         detailNavGraph(navController = navController)
+        //add web nav graph in nav host
         webNavGraph(navController = navController)
     }
 }
@@ -63,6 +64,8 @@ fun NavGraphBuilder.detailNavGraph(navController: NavHostController) {
     }
 }
 
+
+// create web screen nav graph
 fun NavGraphBuilder.webNavGraph(navController: NavHostController) {
     navigation(
         route = Graph.WEB,
