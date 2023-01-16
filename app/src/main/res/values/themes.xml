@@ -19,6 +19,7 @@
 
     </style>
 
+    <!-- setup splash screen-->
     <style name="Theme.CustomSplashScreenTheme" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/primaryColor</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/news_logo</item>
